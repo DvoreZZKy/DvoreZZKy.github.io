@@ -1,12 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-self: center;
-    align-items: center;
-    background: #12121c;
-    color: white;
-    font-family: Artial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #03020A;
+  color: #e6f7ff;
+  font-family: monospace;
 }
 
 .card {
@@ -36,8 +38,48 @@ button:hover {
     background: #7c3aed;
 }
 
-#counter {
-    font-size: 64px;
-    font-weight: 700;
-    margin: 24px, 0;
+#backGraund {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  
+   transform: translate3d(
+    var(--move-x, 0px),
+    var(--move-y, 0px),
+    0
+  ) scale(1.5);
+
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+
+.code-line {
+  position: absolute;
+  white-space: pre;
+  overflow: hidden;
+  max-width: 90vw;
+  width: 0;
+  color: #ea03ff;
+  opacity: 0;
+  font-size: 13px;
+  text-shadow: 0 0 8px currentColor;
+  animation:
+    appear 0.6s ease forwards,
+    typing var(--duration) steps(var(--chars)) forwards,
+    disappear 2s ease var(--end) forwards;
+}
+
+@keyframes appear {
+  to { opacity: var(--opacity); }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: var(--width); }
+}
+
+@keyframes disappear {
+  to { opacity: 0; }
 }
