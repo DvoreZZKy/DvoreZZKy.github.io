@@ -15,9 +15,9 @@ const snippeds = [
 ];
 
 const colors = [
-    "#7C3AED",
-    "#A855F7",
-    "#BF00FF"
+    "#d580ff",
+    "#8a2be2",
+    "#e0b3ff"
 ]
 
 function createLine() {

@@ -5,23 +5,33 @@
 body {
   margin: 0;
   min-height: 100vh;
-  overflow: hidden;
+  display: flex;
+  justify-self: center;
+  align-items: center;
   background: #03020A;
   color: #e6f7ff;
   font-family: monospace;
 }
 
-.card {
-    width:min(400px, calc(100% - 64px));
-    padding: 24px;
-    background: #222235;
-    border: 1px solid #41415e;
-    border-radius: 16px;
-    text-align: center;
+.profile {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-width: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(
+    ellipse,
+    #8c58d159,
+    transparent 75%
+  );
 }
 
 h1 {
-    color: #a78bfa;
+    color: #e4c3ff;
 }
 
 button {
@@ -61,7 +71,7 @@ button:hover {
   overflow: hidden;
   max-width: 90vw;
   width: 0;
-  color: #ea03ff;
+  color: #d400ff;
   opacity: 0;
   font-size: 13px;
   text-shadow: 0 0 8px currentColor;
@@ -82,4 +92,35 @@ button:hover {
 
 @keyframes disappear {
   to { opacity: 0; }
+}
+
+.stackpanel {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile h1 {
+  font-size: clamp(32px, 7vw, 72px);
+  margin: 20px 0 10px;
+  text-shadow: 0 0 25px #00bfff55;
+}
+
+.profile h1 span {
+  color: #e4c3ff;
+  animation: blink 1s steps(2) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .code-line,
+  .profile h1 span {
+    animation: none;
+  }
+
+  .code-line {
+    opacity: 0.15;
+  }
 }
