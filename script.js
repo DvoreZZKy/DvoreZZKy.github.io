@@ -36,7 +36,7 @@ function createLine() {
     line.style.color = colors[Math.floor(Math.random() * colors.length)];
 
     line.style.setProperty("--chars", chars);
-    line.style.setProperty("--width", `${chars * 8}px`);
+    line.style.setProperty("--width", `${chars * 5.5}px`);
     line.style.setProperty("--duration", `${duration}s`);
     line.style.setProperty("--end", `${end}s`);
     line.style.setProperty(
@@ -53,7 +53,7 @@ for (let i = 0; i < 30; i ++) {
     setTimeout(createLine, i * 180);
 }
 
-setInterval(createLine, 250);
+setInterval(createLine, 350);
 
 const bgElement = document.getElementById("backGraund");
 
