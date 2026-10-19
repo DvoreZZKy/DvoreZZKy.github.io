@@ -131,6 +131,7 @@ button:hover {
   align-items: center;
   padding: 10px;
   margin-top: 50px;
+  max-width: 500px;
 }
 
 .stackpanel {
@@ -145,4 +146,34 @@ div img {
 .border p {
   margin: 0;
   font-size: 16px;
+}
+
+.socials img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.socials a {
+    color: #e4c3ff;
+    backdrop-filter: blur(1px);
+    text-decoration: none;
+    font-size: large;
+    font-weight: bold;
+    width: 500px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    
+  -webkit-tap-highlight-color: transparent;
+}
+
+.socials a:hover {
+    color: #ddccff;
+    background: rgba(74, 44, 107, 0.3);
 }
